@@ -16,10 +16,12 @@ export class LogFormElement extends HTMLElement {
 	}
 
   handleEvent(event) {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    if (event.type === "submit") {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
 
-    console.log(Array.from(formData));
+      console.log(Array.from(formData));
+    }
   }
 
 	static define(tagName = "log-form") {
