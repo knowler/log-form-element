@@ -11,12 +11,12 @@ LogFormElement.define();
 
 ```html
 <log-form>
-  <form>
-    <label>
-      <input type="checkbox" name="some-feature">
-      Enable some feature
-    </label>
-    <button>Submit</button>
-  </form>
+	<form>
+		<label>
+			<input type="checkbox" name="some-feature">
+			Enable some feature
+		</label>
+		<button>Submit</button>
+	</form>
 </log-form>
 ```

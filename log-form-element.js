@@ -1,6 +1,6 @@
 const logFormElementStyleSheet = new CSSStyleSheet();
 await logFormElementStyleSheet.replace(`
-  :host { display: contents; }
+	:host { display: contents; }
 `);
 
 export class LogFormElement extends HTMLElement {
@@ -15,14 +15,14 @@ export class LogFormElement extends HTMLElement {
 		this.form?.addEventListener("submit", this);
 	}
 
-  handleEvent(event) {
-    if (event.type === "submit") {
-      event.preventDefault();
-      const formData = new FormData(event.currentTarget);
+	handleEvent(event) {
+		if (event.type === "submit") {
+			event.preventDefault();
+			const formData = new FormData(event.currentTarget);
 
-      console.log(Array.from(formData));
-    }
-  }
+			console.log(Array.from(formData));
+		}
+	}
 
 	static define(tagName = "log-form") {
 		if (!window.customElements.get(tagName)) {
