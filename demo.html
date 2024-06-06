@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en-ca">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark light">
+    <script type="module">
+      import { LogFormElement } from "./log-form-element.js";
+
+      LogFormElement.define();
+    </script>
+  </head>
+  <body>
+		<h1><code>&lt;log-form&gt;</code> element demonstration</h1>
+		<p>Open up the console in your browser’s developer tools to see the logged submissions.</p>
+    <log-form>
+      <form>
+        <div>
+          <label for="field-name">Name</label>
+          <input id="field-name" name="name">
+        </div>
+        <div>
+          <label>
+            <input id="field-pineapple" type="checkbox" name="pineapple"> Pineapple on pizza?
+          </label>
+        </div>
+        <button>Submit</button>
+      </form>
+    </log-form>
+  </body>
+</html>

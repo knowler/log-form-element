@@ -1,24 +1,24 @@
-const logFormElementStyleSheet = new CSSStyleSheet();
-await logFormElementStyleSheet.replace(`
-	:host { display: contents; }
-`);
-
 export class LogFormElement extends HTMLElement {
-	get form() { return this.querySelector(":scope > form"); }
-
-	connectedCallback() {
-		if (!this.shadowRoot) {
-			this.attachShadow({ mode: "open" });
-			this.shadowRoot.adoptedStyleSheets = [logFormElementStyleSheet];
-			this.shadowRoot.innerHTML = "<slot></slot>";
+	static styleSheet = createStyleSheet(`
+		:host {
+			display: contents;
 		}
-		this.form?.addEventListener("submit", this);
+	`);
+
+	constructor() {
+		super();
+
+		this.attachShadow({ mode: "open" });
+		this.shadowRoot.adoptedStyleSheets = [this.constructor.styleSheet];
+		this.shadowRoot.innerHTML = "<slot></slot>";
+
+		this.addEventListener("submit", this, true);
 	}
 
 	handleEvent(event) {
-		if (event.type === "submit") {
+		if (event.type === "submit" && event.target.matches("form")) {
 			event.preventDefault();
-			const formData = new FormData(event.currentTarget);
+			const formData = new FormData(event.target);
 
 			console.log(Array.from(formData));
 		}
@@ -32,3 +32,8 @@ export class LogFormElement extends HTMLElement {
 	}
 }
 
+function createStyleSheet(styles) {
+	const sheet = new CSSStyleSheet();
+	sheet.replaceSync(styles);
+	return sheet;
+}
