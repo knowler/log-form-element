@@ -37,3 +37,7 @@ function createStyleSheet(styles) {
 	sheet.replaceSync(styles);
 	return sheet;
 }
+
+if (new URL(import.meta.url).searchParams.has("define")) {
+	LogFormElement.define();
+}
