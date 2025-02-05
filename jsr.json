@@ -1,0 +1,12 @@
+{
+	"name": "@knowler/log-form-element",
+	"version": "1.0.0",
+	"exports": "./log-form-element.js",
+	"license": "Unlicense",
+	"publish": {
+		"exclude": [".editorconfig", "*.html"]
+	},
+	"compilerOptions": {
+		"lib": ["es2015", "dom", "dom.iterable", "dom.asynciterable"]
+	}
+}
