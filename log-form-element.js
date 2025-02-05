@@ -1,17 +1,7 @@
 export class LogFormElement extends HTMLElement {
-	static styleSheet = createStyleSheet(`
-		:host {
-			display: contents;
-		}
-	`);
-
 	constructor() {
 		super();
-
-		this.attachShadow({ mode: "open" });
-		this.shadowRoot.adoptedStyleSheets = [this.constructor.styleSheet];
-		this.shadowRoot.innerHTML = "<slot></slot>";
-
+		this.attachShadow({ mode: "open" }).innerHTML = "<style>:host { display: contents; }</style><slot></slot>";
 		this.addEventListener("submit", this, true);
 	}
 
@@ -19,7 +9,6 @@ export class LogFormElement extends HTMLElement {
 		if (event.type === "submit" && event.target.matches("form")) {
 			event.preventDefault();
 			const formData = new FormData(event.target);
-
 			console.log(Array.from(formData));
 		}
 	}
@@ -32,12 +21,4 @@ export class LogFormElement extends HTMLElement {
 	}
 }
 
-function createStyleSheet(styles) {
-	const sheet = new CSSStyleSheet();
-	sheet.replaceSync(styles);
-	return sheet;
-}
-
-if (new URL(import.meta.url).searchParams.has("define")) {
-	LogFormElement.define();
-}
+if (new URL(import.meta.url).searchParams.has("define")) LogFormElement.define();
