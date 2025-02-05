@@ -1,3 +1,4 @@
+/* @ts-self-types="./log-form-element.d.ts" */
 export class LogFormElement extends HTMLElement {
 	constructor() {
 		super();
