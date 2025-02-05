@@ -1,5 +1,7 @@
 # Log Form Element
 
+[![JSR](https://jsr.io/badges/@knowler/log-form-element)](https://jsr.io/@knowler/log-form-element)
+
 Wrap a `<form>` element with this `<log-form-element>` and it’ll prevent the
 default submission and log the form data to the console instead. [See the demo on CodePen](https://codepen.io/knowler/pen/zYembKY).
 
