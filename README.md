@@ -5,8 +5,6 @@
 Wrap a `<form>` element with this `<log-form>` and it’ll prevent the
 default submission and log the form data to the console instead.
 
-[See the demo](https://knowler.github.io/log-form-element/demo).
-
 ## Usage
 
 The element is published on JSR (which can be used as an NPM registry) or you
@@ -45,3 +43,8 @@ open your console to debug submission.
 	</form>
 </log-form>
 ```
+
+## Examples
+
+- [Basic](https://knowler.github.io/log-form-element/examples/basic)
+- [Auto-define](https://knowler.github.io/log-form-element/examples/auto-define)
