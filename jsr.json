@@ -4,7 +4,7 @@
 	"exports": "./log-form-element.js",
 	"license": "Unlicense",
 	"publish": {
-		"exclude": [".editorconfig", "*.html", ".github"]
+		"exclude": [".editorconfig", "examples", ".github"]
 	},
 	"compilerOptions": {
 		"lib": ["es2015", "dom", "dom.iterable", "dom.asynciterable"]
