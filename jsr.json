@@ -1,6 +1,6 @@
 {
 	"name": "@knowler/log-form-element",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"exports": "./log-form-element.js",
 	"license": "Unlicense",
 	"publish": {
